@@ -1,0 +1,814 @@
+{
+  "id": "fee28d24-cafc-48c5-9280-bffc0c2c2954",
+  "revision": 0,
+  "last_node_id": 14,
+  "last_link_id": 19,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "CLIPTextEncode",
+      "pos": [
+        400,
+        0
+      ],
+      "size": [
+        430,
+        260
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            7
+          ]
+        }
+      ],
+      "title": "3 - Shot 1: hete Nederlandse straat",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "Documentary photograph of two university students standing side by side on a paved sidewalk in a fictional Dutch residential neighbourhood. The man wears a light grey T-shirt and tan trousers. The woman wears a sage-green T-shirt and olive trousers. Behind them, a street receding into the distance, red brick terraced houses, windows, sunlit asphalt, pale paving stones, clear summer sky. Hot summer afternoon, dry surfaces, very little vegetation, no trees nearby. Natural colours, realistic architectural proportions, eye-level camera, realistic street photography."
+      ],
+      "widgets_values_named": {
+        "text": "Documentary photograph of two university students standing side by side on a paved sidewalk in a fictional Dutch residential neighbourhood. The man wears a light grey T-shirt and tan trousers. The woman wears a sage-green T-shirt and olive trousers. Behind them, a street receding into the distance, red brick terraced houses, windows, sunlit asphalt, pale paving stones, clear summer sky. Hot summer afternoon, dry surfaces, very little vegetation, no trees nearby. Natural colours, realistic architectural proportions, eye-level camera, realistic street photography."
+      }
+    },
+    {
+      "id": 4,
+      "type": "CLIPTextEncode",
+      "pos": [
+        400,
+        310
+      ],
+      "size": [
+        430,
+        170
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            8
+          ]
+        }
+      ],
+      "title": "Negatieve prompt",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "painting, illustration, cartoon, CGI, extra people, crowd, duplicate person, warped buildings, distorted windows, grey studio backdrop, plain concrete wall, text, watermark, logo"
+      ],
+      "widgets_values_named": {
+        "text": "painting, illustration, cartoon, CGI, extra people, crowd, duplicate person, warped buildings, distorted windows, grey studio backdrop, plain concrete wall, text, watermark, logo"
+      }
+    },
+    {
+      "id": 5,
+      "type": "VAEEncodeForInpaint",
+      "pos": [
+        880,
+        340
+      ],
+      "size": [
+        347.5103515625,
+        140
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 3
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 4
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            9
+          ]
+        }
+      ],
+      "title": "4 - Alleen gemaskeerd gebied opnieuw maken",
+      "properties": {
+        "Node name for S&R": "VAEEncodeForInpaint",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        6
+      ],
+      "widgets_values_named": {
+        "grow_mask_by": 6
+      }
+    },
+    {
+      "id": 6,
+      "type": "KSampler",
+      "pos": [
+        880,
+        0
+      ],
+      "size": [
+        320,
+        280
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 6
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 7
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 8
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            10
+          ]
+        }
+      ],
+      "title": "5 - Genereer achtergrond",
+      "properties": {
+        "Node name for S&R": "KSampler",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        27092711,
+        "fixed",
+        30,
+        5,
+        "dpmpp_2m",
+        "karras",
+        1
+      ],
+      "widgets_values_named": {
+        "seed": 27092711,
+        "control_after_generate": "fixed",
+        "steps": 30,
+        "cfg": 5,
+        "sampler_name": "dpmpp_2m",
+        "scheduler": "karras",
+        "denoise": 1
+      }
+    },
+    {
+      "id": 7,
+      "type": "VAEDecode",
+      "pos": [
+        1240,
+        0
+      ],
+      "size": [
+        280,
+        90
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 10
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            13
+          ]
+        }
+      ],
+      "title": "6 - Decodeer",
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core"
+      }
+    },
+    {
+      "id": 8,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        1240,
+        170
+      ],
+      "size": [
+        340,
+        180
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 12
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 13
+        },
+        {
+          "name": "mask",
+          "shape": 7,
+          "type": "MASK",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            15
+          ]
+        }
+      ],
+      "title": "7 - Behoud originele pixels buiten masker",
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        0,
+        0,
+        false
+      ],
+      "widgets_values_named": {
+        "x": 0,
+        "y": 0,
+        "resize_source": false
+      }
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [
+        1620,
+        0
+      ],
+      "size": [
+        440,
+        540
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "title": "SHOT 1 - Beginbeeld opslaan",
+      "properties": {
+        "Node name for S&R": "SaveImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "UrbanHeat/shot_01_duo_automask"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "UrbanHeat/shot_01_duo_automask"
+      }
+    },
+    {
+      "id": 10,
+      "type": "MaskToImage",
+      "pos": [
+        400,
+        560
+      ],
+      "size": [
+        340.011328125,
+        90
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            17
+          ]
+        }
+      ],
+      "title": "Controle: wit = vervangen, zwart = behouden",
+      "properties": {
+        "Node name for S&R": "MaskToImage",
+        "cnr_id": "comfy-core"
+      }
+    },
+    {
+      "id": 11,
+      "type": "PreviewImage",
+      "pos": [
+        880,
+        570
+      ],
+      "size": [
+        349.8140625,
+        360
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "title": "Controleer masker VOOR beoordeling resultaat",
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "cnr_id": "comfy-core"
+      }
+    },
+    {
+      "id": 12,
+      "type": "MarkdownNote",
+      "pos": [
+        0,
+        1020
+      ],
+      "size": [
+        1040,
+        630
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "START HIER - automatisch masker",
+      "properties": {
+        "Node name for S&R": "MarkdownNote",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "# Automatisch duo-masker en achtergrond vervangen\n\nINSTALLATIE: zoek ComfyUI-Inspyrenet-Rembg van john-mnz in ComfyUI Manager, installeer en herstart. Repo: https://github.com/john-mnz/ComfyUI-Inspyrenet-Rembg\nDeze uitbreiding downloadt bij het eerste gebruik automatisch een extra segmentatiemodel. Ook softwareafhankelijkheden worden geinstalleerd. SDXL blijft je bestaande checkpoint. Internet nodig bij eerste download.\n\n1. Selecteer je bestaande SDXL-checkpoint.\n2. Upload je originele duo-PNG uit ComfyUI (bij voorkeur 1024 x 1024), geen screenshot. Handmatig maskeren is niet nodig.\n3. Klik Run. Inspyrenet maakt een VOORGRONDmasker; InvertMask maakt daarvan het ACHTERGRONDmasker. Wit in de maskerpreview = vervangen, zwart = behouden. Beide personen horen zwart te zijn.\n4. De straatprompt staat ingevuld. Het gegenereerde gebied wordt via dit masker over het origineel gelegd. Originele pixels blijven behouden waar het masker volledig zwart is. Haargrenzen met grijze maskerwaarden worden gemengd.\n5. Controleer masker en resultaat. Automatische segmentatie kan haar of kleding missen; geen perfecte selectie gegarandeerd. Zonder goed masker geen betrouwbaar resultaat.\n6. Tevreden? Gebruik de opgeslagen PNG als beginbeeld in je Wan image-to-video-workflow.\n\nDe eerste run duurt langer door het downloaden en laden. Bij ontbrekende Inspyrenet-node: installeer de uitbreiding en controleer na herstart de foutmelding in de terminal.\n\nDeze workflow vervangt alleen de achtergrond. Houding, gezichten en belichting van de personen blijven op hun oorspronkelijke plaats. Voor nieuwe poses/camerahoeken is een andere aanpak nodig. Geen videorender in dit bestand.\n\nNode-schema geverifieerd aan broncode; JSON en verbindingen gecontroleerd. Geen lokale GPU-render uitgevoerd."
+      ],
+      "widgets_values_named": {
+        "text": "# Automatisch duo-masker en achtergrond vervangen\n\nINSTALLATIE: zoek ComfyUI-Inspyrenet-Rembg van john-mnz in ComfyUI Manager, installeer en herstart. Repo: https://github.com/john-mnz/ComfyUI-Inspyrenet-Rembg\nDeze uitbreiding downloadt bij het eerste gebruik automatisch een extra segmentatiemodel. Ook softwareafhankelijkheden worden geinstalleerd. SDXL blijft je bestaande checkpoint. Internet nodig bij eerste download.\n\n1. Selecteer je bestaande SDXL-checkpoint.\n2. Upload je originele duo-PNG uit ComfyUI (bij voorkeur 1024 x 1024), geen screenshot. Handmatig maskeren is niet nodig.\n3. Klik Run. Inspyrenet maakt een VOORGRONDmasker; InvertMask maakt daarvan het ACHTERGRONDmasker. Wit in de maskerpreview = vervangen, zwart = behouden. Beide personen horen zwart te zijn.\n4. De straatprompt staat ingevuld. Het gegenereerde gebied wordt via dit masker over het origineel gelegd. Originele pixels blijven behouden waar het masker volledig zwart is. Haargrenzen met grijze maskerwaarden worden gemengd.\n5. Controleer masker en resultaat. Automatische segmentatie kan haar of kleding missen; geen perfecte selectie gegarandeerd. Zonder goed masker geen betrouwbaar resultaat.\n6. Tevreden? Gebruik de opgeslagen PNG als beginbeeld in je Wan image-to-video-workflow.\n\nDe eerste run duurt langer door het downloaden en laden. Bij ontbrekende Inspyrenet-node: installeer de uitbreiding en controleer na herstart de foutmelding in de terminal.\n\nDeze workflow vervangt alleen de achtergrond. Houding, gezichten en belichting van de personen blijven op hun oorspronkelijke plaats. Voor nieuwe poses/camerahoeken is een andere aanpak nodig. Geen videorender in dit bestand.\n\nNode-schema geverifieerd aan broncode; JSON en verbindingen gecontroleerd. Geen lokale GPU-render uitgevoerd."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 13,
+      "type": "InspyrenetRembg",
+      "pos": [
+        0,
+        700
+      ],
+      "size": [
+        350,
+        130
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": []
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "slot_index": 1,
+          "links": [
+            19
+          ]
+        }
+      ],
+      "title": "Automatisch: selecteer beide personen",
+      "properties": {
+        "Node name for S&R": "InspyrenetRembg"
+      },
+      "widgets_values": [
+        "default"
+      ],
+      "widgets_values_named": {
+        "torchscript_jit": "default"
+      }
+    },
+    {
+      "id": 14,
+      "type": "InvertMask",
+      "pos": [
+        400,
+        740
+      ],
+      "size": [
+        350,
+        130
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "slot_index": 0,
+          "links": [
+            5,
+            14,
+            16
+          ]
+        }
+      ],
+      "title": "Automatisch: selecteer achtergrond",
+      "properties": {
+        "Node name for S&R": "InvertMask",
+        "cnr_id": "comfy-core"
+      }
+    },
+    {
+      "id": 1,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -305.3333536783853,
+        -161.3333002726237
+      ],
+      "size": [
+        310,
+        150
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            6
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 1,
+          "links": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 2,
+          "links": [
+            4,
+            11
+          ]
+        }
+      ],
+      "title": "1 - Bestaand SDXL-model",
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "sd_xl_base_1.0.safetensors"
+      ],
+      "widgets_values_named": {
+        "ckpt_name": "sd_xl_base_1.0.safetensors"
+      }
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        -584.0000406901039,
+        186.00001017252598
+      ],
+      "size": [
+        409.77890625,
+        420
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            3,
+            12,
+            18
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "slot_index": 1,
+          "links": []
+        }
+      ],
+      "title": "2 - Upload originele duo-PNG (geen handmatig masker)",
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "ChatGPT-afbeelding 29 sep 2026, 17_48_15.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "ChatGPT-afbeelding 29 sep 2026, 17_48_15.png",
+        "upload": "image"
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      1,
+      3,
+      0,
+      "CLIP"
+    ],
+    [
+      2,
+      1,
+      1,
+      4,
+      0,
+      "CLIP"
+    ],
+    [
+      3,
+      2,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      1,
+      2,
+      5,
+      1,
+      "VAE"
+    ],
+    [
+      5,
+      14,
+      0,
+      5,
+      2,
+      "MASK"
+    ],
+    [
+      6,
+      1,
+      0,
+      6,
+      0,
+      "MODEL"
+    ],
+    [
+      7,
+      3,
+      0,
+      6,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      8,
+      4,
+      0,
+      6,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      9,
+      5,
+      0,
+      6,
+      3,
+      "LATENT"
+    ],
+    [
+      10,
+      6,
+      0,
+      7,
+      0,
+      "LATENT"
+    ],
+    [
+      11,
+      1,
+      2,
+      7,
+      1,
+      "VAE"
+    ],
+    [
+      12,
+      2,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      13,
+      7,
+      0,
+      8,
+      1,
+      "IMAGE"
+    ],
+    [
+      14,
+      14,
+      0,
+      8,
+      2,
+      "MASK"
+    ],
+    [
+      15,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      16,
+      14,
+      0,
+      10,
+      0,
+      "MASK"
+    ],
+    [
+      17,
+      10,
+      0,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      18,
+      2,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      19,
+      13,
+      1,
+      14,
+      0,
+      "MASK"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5317765146897198,
+      "offset": [
+        50.25534932429536,
+        260.61866504217505
+      ]
+    },
+    "frontendVersion": "1.52.7"
+  },
+  "version": 0.4
+}

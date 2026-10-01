@@ -1,0 +1,729 @@
+{
+  "id": "8306fb33-203a-4bf9-aebc-e08cb9b3bc75",
+  "revision": 0,
+  "last_node_id": 68,
+  "last_link_id": 121,
+  "nodes": [
+    {
+      "id": 37,
+      "type": "UNETLoader",
+      "pos": [
+        470,
+        50
+      ],
+      "size": [
+        346.7470703125,
+        82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            94
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "models": [
+          {
+            "name": "wan2.2_ti2v_5B_fp16.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_ti2v_5B_fp16.safetensors",
+            "directory": "diffusion_models"
+          }
+        ]
+      },
+      "widgets_values": [
+        "wan2.2_ti2v_5B_fp16.safetensors",
+        "default"
+      ],
+      "widgets_values_named": {
+        "unet_name": "wan2.2_ti2v_5B_fp16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 38,
+      "type": "CLIPLoader",
+      "pos": [
+        470,
+        190
+      ],
+      "size": [
+        350,
+        110
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 0,
+          "links": [
+            74,
+            75
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "models": [
+          {
+            "name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+            "directory": "text_encoders"
+          }
+        ]
+      },
+      "widgets_values": [
+        "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+        "wan",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+        "type": "wan",
+        "device": "default"
+      }
+    },
+    {
+      "id": 55,
+      "type": "Wan22ImageToVideoLatent",
+      "pos": [
+        1012.463215585953,
+        542.4837105575899
+      ],
+      "size": [
+        285.0435546875,
+        150
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 105
+        },
+        {
+          "name": "start_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 118
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            104
+          ]
+        }
+      ],
+      "title": "3 - Videoformaat en lengte (vierkant)",
+      "properties": {
+        "Node name for S&R": "Wan22ImageToVideoLatent",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45"
+      },
+      "widgets_values": [
+        768,
+        768,
+        121,
+        1
+      ],
+      "widgets_values_named": {
+        "width": 768,
+        "height": 768,
+        "length": 121,
+        "batch_size": 1
+      }
+    },
+    {
+      "id": 57,
+      "type": "CreateVideo",
+      "pos": [
+        2197.2786535314162,
+        31.375483180643815
+      ],
+      "size": [
+        270,
+        150
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 119
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            108
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateVideo",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45"
+      },
+      "widgets_values": [
+        24,
+        "auto",
+        "sRGB",
+        "none"
+      ],
+      "widgets_values_named": {
+        "fps": 24,
+        "bit_depth": "auto",
+        "color_space": "sRGB",
+        "codec": "none"
+      }
+    },
+    {
+      "id": 48,
+      "type": "ModelSamplingSD3",
+      "pos": [
+        1472.026997770854,
+        86.31904252651358
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 94
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            95
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingSD3",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45"
+      },
+      "widgets_values": [
+        8
+      ],
+      "widgets_values_named": {
+        "shift": 8
+      }
+    },
+    {
+      "id": 39,
+      "type": "VAELoader",
+      "pos": [
+        494.3236860165511,
+        520.1845643092505
+      ],
+      "size": [
+        350,
+        60
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 0,
+          "links": [
+            105,
+            120
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "models": [
+          {
+            "name": "wan2.2_vae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan2.2_vae.safetensors",
+            "directory": "vae"
+          }
+        ]
+      },
+      "widgets_values": [
+        "wan2.2_vae.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "wan2.2_vae.safetensors"
+      }
+    },
+    {
+      "id": 58,
+      "type": "SaveVideo",
+      "pos": [
+        2915.785326285097,
+        191.12157440677785
+      ],
+      "size": [
+        660,
+        130
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 108
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "UrbanHeat/shot_01_duo_video",
+        "mp4",
+        "h264",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "UrbanHeat/shot_01_duo_video",
+        "format": "mp4",
+        "format.codec": "h264",
+        "format.codec.encoding": "auto",
+        "codec": "auto"
+      }
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [
+        1745.261533935952,
+        267.94357809669987
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 95
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 46
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 52
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 104
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            121
+          ]
+        }
+      ],
+      "title": "4 - Video genereren",
+      "properties": {
+        "Node name for S&R": "KSampler",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45"
+      },
+      "widgets_values": [
+        27092619,
+        "fixed",
+        30,
+        4,
+        "uni_pc",
+        "simple",
+        1
+      ],
+      "widgets_values_named": {
+        "seed": 27092619,
+        "control_after_generate": "fixed",
+        "steps": 30,
+        "cfg": 4,
+        "sampler_name": "uni_pc",
+        "scheduler": "simple",
+        "denoise": 1
+      }
+    },
+    {
+      "id": 67,
+      "type": "LoadImage",
+      "pos": [
+        17.878804692880536,
+        28.980716253443546
+      ],
+      "size": [
+        390,
+        650
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            118
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "slot_index": 1,
+          "links": null
+        }
+      ],
+      "title": "1 - Upload jullie foto met straat",
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "startshot 6.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "startshot 6.png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        880,
+        50
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 74
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            46
+          ]
+        }
+      ],
+      "title": "2 - Beweging van personen en camera",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45"
+      },
+      "widgets_values": [
+        "Two students sit comfortably on a wooden bench in the shade of a leafy tree. The man on the right slowly exhales and gently relaxes his shoulders. The woman on the left briefly glances toward him with a small, relaxed smile. Both blink naturally and remain seated, their hands resting on their thighs. A light breeze gently moves their curls and the surrounding leaves. Peaceful relief from the summer heat. Consistent facial features and clothing, natural restrained movements. Fixed camera, one continuous realistic shot."
+      ],
+      "widgets_values_named": {
+        "text": "Two students sit comfortably on a wooden bench in the shade of a leafy tree. The man on the right slowly exhales and gently relaxes his shoulders. The woman on the left briefly glances toward him with a small, relaxed smile. Both blink naturally and remain seated, their hands resting on their thighs. A light breeze gently moves their curls and the surrounding leaves. Peaceful relief from the summer heat. Consistent facial features and clothing, natural restrained movements. Fixed camera, one continuous realistic shot."
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [
+        880,
+        260
+      ],
+      "size": [
+        425.27801513671875,
+        180.6060791015625
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 75
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            52
+          ]
+        }
+      ],
+      "title": "CLIP Text Encode (Negative Prompt)",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.45"
+      },
+      "widgets_values": [
+        "standing up, walking, talking, exaggerated smile, open mouth, laughing, large head turns, raised arms, touching face, hugging, changing identity, distorted face, asymmetrical eyes, warped hands, extra fingers, merged bodies, plastic skin, blur, flicker, camera movement, zoom, cuts, text, watermark"
+      ],
+      "widgets_values_named": {
+        "text": "standing up, walking, talking, exaggerated smile, open mouth, laughing, large head turns, raised arms, touching face, hugging, changing identity, distorted face, asymmetrical eyes, warped hands, extra fingers, merged bodies, plastic skin, blur, flicker, camera movement, zoom, cuts, text, watermark"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 68,
+      "type": "VAEDecodeTiled",
+      "pos": [
+        1731.255976173192,
+        -92.46981085282087
+      ],
+      "size": [
+        270,
+        150
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 121
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 120
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            119
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecodeTiled"
+      },
+      "widgets_values": [
+        512,
+        64,
+        64,
+        4
+      ],
+      "widgets_values_named": {
+        "tile_size": 512,
+        "overlap": 64,
+        "temporal_size": 64,
+        "temporal_overlap": 4
+      }
+    }
+  ],
+  "links": [
+    [
+      46,
+      6,
+      0,
+      3,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      52,
+      7,
+      0,
+      3,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      74,
+      38,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      75,
+      38,
+      0,
+      7,
+      0,
+      "CLIP"
+    ],
+    [
+      94,
+      37,
+      0,
+      48,
+      0,
+      "MODEL"
+    ],
+    [
+      95,
+      48,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      104,
+      55,
+      0,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      105,
+      39,
+      0,
+      55,
+      0,
+      "VAE"
+    ],
+    [
+      108,
+      57,
+      0,
+      58,
+      0,
+      "VIDEO"
+    ],
+    [
+      118,
+      67,
+      0,
+      55,
+      1,
+      "IMAGE"
+    ],
+    [
+      119,
+      68,
+      0,
+      57,
+      0,
+      "IMAGE"
+    ],
+    [
+      120,
+      39,
+      0,
+      68,
+      1,
+      "VAE"
+    ],
+    [
+      121,
+      3,
+      0,
+      68,
+      0,
+      "LATENT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.3532877638030673,
+      "offset": [
+        45.95247971056826,
+        1253.5650331046018
+      ]
+    },
+    "workflow_purpose": "Approved duo street image to Wan 2.2 TI2V 5B video",
+    "frontendVersion": "1.52.7"
+  },
+  "version": 0.4
+}

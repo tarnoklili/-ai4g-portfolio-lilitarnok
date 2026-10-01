@@ -1,0 +1,448 @@
+{
+  "id": "7c2166c5-4588-42f3-a82a-dcfe8093bd6d",
+  "revision": 0,
+  "last_node_id": 66,
+  "last_link_id": 117,
+  "nodes": [
+    {
+      "id": 60,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        0,
+        60
+      ],
+      "size": [
+        360,
+        110
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            111
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 1,
+          "links": [
+            109,
+            110
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 2,
+          "links": [
+            116
+          ]
+        }
+      ],
+      "title": "1 - Load SDXL image model",
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple",
+        "cnr_id": "comfy-core",
+        "models": [
+          {
+            "name": "sd_xl_base_1.0.safetensors",
+            "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors",
+            "directory": "checkpoints"
+          }
+        ]
+      },
+      "widgets_values": [
+        "sd_xl_base_1.0.safetensors"
+      ],
+      "widgets_values_named": {
+        "ckpt_name": "sd_xl_base_1.0.safetensors"
+      }
+    },
+    {
+      "id": 65,
+      "type": "VAEDecode",
+      "pos": [
+        1414.4295401765849,
+        49.430798225943086
+      ],
+      "size": [
+        260,
+        70
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 115
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 116
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            117
+          ]
+        }
+      ],
+      "title": "Result to image",
+      "properties": {
+        "Node name for S&R": "VAEDecode",
+        "cnr_id": "comfy-core"
+      }
+    },
+    {
+      "id": 63,
+      "type": "EmptyLatentImage",
+      "pos": [
+        0,
+        280
+      ],
+      "size": [
+        300,
+        110
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            114
+          ]
+        }
+      ],
+      "title": "Portrait image size",
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ],
+      "widgets_values_named": {
+        "width": 1024,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    {
+      "id": 66,
+      "type": "SaveImage",
+      "pos": [
+        1878.9623702334568,
+        39.10194618524828
+      ],
+      "size": [
+        440,
+        510
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 117
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "title": "PERSONAGE - preview en PNG opslaan",
+      "properties": {
+        "Node name for S&R": "SaveImage",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "UrbanHeat/personage_referentie"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "UrbanHeat/personage_referentie"
+      }
+    },
+    {
+      "id": 64,
+      "type": "KSampler",
+      "pos": [
+        920,
+        40
+      ],
+      "size": [
+        427.30625,
+        270
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 111
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 112
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 113
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 114
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            115
+          ]
+        }
+      ],
+      "title": "Person generation",
+      "properties": {
+        "Node name for S&R": "KSampler",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        27092623,
+        "fixed",
+        30,
+        5,
+        "dpmpp_2m",
+        "karras",
+        1
+      ],
+      "widgets_values_named": {
+        "seed": 27092623,
+        "control_after_generate": "fixed",
+        "steps": 30,
+        "cfg": 5,
+        "sampler_name": "dpmpp_2m",
+        "scheduler": "karras",
+        "denoise": 1
+      }
+    },
+    {
+      "id": 61,
+      "type": "CLIPTextEncode",
+      "pos": [
+        410,
+        30
+      ],
+      "size": [
+        440,
+        250
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 109
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            112
+          ]
+        }
+      ],
+      "title": "PERSONAGE - positieve prompt",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "Realistic photograph, straight rear view of two university students sitting on a wooden bench, a small gap between them. Both look straight ahead, away from the camera. Only the backs of their heads are visible. Their hands rest on their own thighs, shoulders slightly slumped from the heat.\n\nLeft: a young man with short curly light brown hair, wearing a light grey T-shirt and beige trousers.\nRight: a young woman with shoulder-length curly dark brown hair, wearing a sage green crew-neck T-shirt covering her entire back and shoulders, olive trousers.\n\nThe bench stands on a bare paved square surrounded by Dutch red brick houses. Sparse dried yellow grass between paving stones. Direct harsh midday sunlight, hard shadows, dry summer heat. Medium rear shot, realistic fabric and hair, sharp focus, natural colours."
+      ],
+      "widgets_values_named": {
+        "text": "Realistic photograph, straight rear view of two university students sitting on a wooden bench, a small gap between them. Both look straight ahead, away from the camera. Only the backs of their heads are visible. Their hands rest on their own thighs, shoulders slightly slumped from the heat.\n\nLeft: a young man with short curly light brown hair, wearing a light grey T-shirt and beige trousers.\nRight: a young woman with shoulder-length curly dark brown hair, wearing a sage green crew-neck T-shirt covering her entire back and shoulders, olive trousers.\n\nThe bench stands on a bare paved square surrounded by Dutch red brick houses. Sparse dried yellow grass between paving stones. Direct harsh midday sunlight, hard shadows, dry summer heat. Medium rear shot, realistic fabric and hair, sharp focus, natural colours."
+      }
+    },
+    {
+      "id": 62,
+      "type": "CLIPTextEncode",
+      "pos": [
+        410,
+        350
+      ],
+      "size": [
+        440,
+        170
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 110
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "slot_index": 0,
+          "links": [
+            113
+          ]
+        }
+      ],
+      "title": "IMAGE negative prompt",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "front view, side view, visible face, standing, walking, sitting on ground, separate benches, extra person, duplicate person, malformed body, blurry, illustration, painting, cartoon, text, watermark, hugging, embracing, kissing, touching each other, looking at each other, looking back, visible faces, bare back, bare shoulders, strapless top, dress, green lawn, park, lush greenery, shade, extra limbs, fused bodies, blurry, cartoon, painting, text, watermark"
+      ],
+      "widgets_values_named": {
+        "text": "front view, side view, visible face, standing, walking, sitting on ground, separate benches, extra person, duplicate person, malformed body, blurry, illustration, painting, cartoon, text, watermark, hugging, embracing, kissing, touching each other, looking at each other, looking back, visible faces, bare back, bare shoulders, strapless top, dress, green lawn, park, lush greenery, shade, extra limbs, fused bodies, blurry, cartoon, painting, text, watermark"
+      }
+    }
+  ],
+  "links": [
+    [
+      109,
+      60,
+      1,
+      61,
+      0,
+      "CLIP"
+    ],
+    [
+      110,
+      60,
+      1,
+      62,
+      0,
+      "CLIP"
+    ],
+    [
+      111,
+      60,
+      0,
+      64,
+      0,
+      "MODEL"
+    ],
+    [
+      112,
+      61,
+      0,
+      64,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      113,
+      62,
+      0,
+      64,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      114,
+      63,
+      0,
+      64,
+      3,
+      "LATENT"
+    ],
+    [
+      115,
+      64,
+      0,
+      65,
+      0,
+      "LATENT"
+    ],
+    [
+      116,
+      60,
+      2,
+      65,
+      1,
+      "VAE"
+    ],
+    [
+      117,
+      65,
+      0,
+      66,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 5,
+      "title": "Stap 1 - Personagefoto genereren",
+      "bounding": [
+        -30,
+        -30,
+        1740,
+        610
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5563736367555382,
+      "offset": [
+        270.542812076975,
+        625.1215478599527
+      ]
+    },
+    "frontendVersion": "1.52.7"
+  },
+  "version": 0.4
+}
