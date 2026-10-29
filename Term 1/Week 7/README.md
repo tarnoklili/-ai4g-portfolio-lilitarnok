@@ -20,40 +20,37 @@ _List the files, or link to them. Notebook exports, screenshots, scripts._
 
 ## 2. Hackathon prototype -> [`hackathon/`](hackathon/)
 
-> Your tool and your SDG for this hackathon are announced at the **start of Friday's class**.
-> Write them down here once you know them.
+**Project title:** Knotweed Checker: spot invasive Japanese knotweed from a phone photo
 
-**Project title:**
+**My pair partner:** Jelle Schwarz
 
-**My pair partner:**
+**Tool we had to use:** Roboflow
 
-**Tool we had to use:**
-
-**SDG we had to address:**
+**SDG we had to address:** SDG 15, Life on Land (target 15.8: invasive alien species)
 
 **What problem does it solve, and for whom?**
-_Name a real, specific user. "Everyone" is not a user._
+Japanese knotweed is an invasive plant that pushes out native plants and regrows from tiny root pieces. Dutch municipalities spend millions on it (Amsterdam set aside €8.2 million) and ask residents to report where it grows, but most residents cannot tell it from look-alikes such as bindweed. Our user is a resident or park volunteer in the Netherlands who sees a suspicious plant and wants to know in seconds whether to report it.
 
 **What did you build?**
-_Two or three sentences. What can a user actually do with it?_
+A web app where you take or upload a photo of a plant. Our Roboflow model, trained on 832 Dutch photos, says whether it is knotweed. If it is likely knotweed, the app says "don't cut it, report it"; if unsure, it asks for a closer photo. On 168 new photos from Belgium and Germany it was 93% right, with four times fewer false alarms than a general AI model (CLIP).
 
 **Link to the live thing (if any):**
-_Deployed URL, workflow export, video demo - whatever proves it works._
+Code, slides, data card and results: [`hackathon/`](hackathon/) (start with [`hackathon/README.md`](hackathon/README.md)). Screenshot of the app answering a test photo: [`hackathon/examples/app-screenshot.jpg`](hackathon/examples/app-screenshot.jpg). The model is in our private Roboflow workspace, so we demo it live.
 
 **How do I run it?**
-_Short instructions so someone else can start it._
+In `hackathon/`: `pip install -r requirements.txt`, set `ROBOFLOW_API_KEY` and `ROBOFLOW_MODEL=knotweed-nl/1`, then `streamlit run app.py`. Full steps in [`hackathon/README.md`](hackathon/README.md).
 
 **Who did what?**
-_Be honest about the split of work between you and your partner._
+WHO_DID_WHAT
 
 **Ethical reflection - what are the risks of your tool? Who could it harm?**
-_Every hackathon requires this. One honest paragraph beats three vague ones._
+A missed knotweed means a patch is not reported and keeps spreading. A false alarm could make someone cut or poison a harmless plant, and cutting real knotweed the wrong way spreads it. So the app never tells anyone to remove a plant, only to report it, and only says "likely knotweed" at 70% confidence or more. Our data comes from nature enthusiasts' close-up photos, so real street snapshots may do worse than our tests, and photos are sent to Roboflow's servers, so users should not photograph people or house numbers. Full data card: [`hackathon/DATA_CARD.md`](hackathon/DATA_CARD.md).
 
 ### Checklist
-- [ ] Prototype code (or export / workflow file) is in `hackathon/`
-- [ ] This week's slides are in `hackathon/`
-- [ ] The prototype actually runs, and I wrote down how to run it
-- [ ] Ethical reflection written above
+- [x] Prototype code (or export / workflow file) is in `hackathon/`
+- [x] This week's slides are in `hackathon/`
+- [x] The prototype actually runs, and I wrote down how to run it
+- [x] Ethical reflection written above
 
 ---
 
@@ -72,6 +69,7 @@ _Every hackathon requires this. One honest paragraph beats three vague ones._
 ## 4. Reflection
 
 **What is the most important thing I learned this week?**
+We expected the model to fail on young spring shoots, but when we tested it on 168 new photos from Belgium and Germany it found 27 of 30 spring plants. The real problem was somewhere else: iNaturalist's search had mixed up knotweed and bindweed, so about 70 of our photos had the wrong label before we caught it. Testing taught us more than guessing.
 
 **Where does this connect to "AI for Good"?**
-_One concrete link to ethics, sustainability or social impact._
+Invasive species are one of the main threats to biodiversity on land (SDG 15). A tool that helps residents report knotweed early, while warning them not to act on it themselves, uses AI to support the people who protect nature instead of replacing their judgement.
