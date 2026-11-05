@@ -20,40 +20,37 @@ _List the files, or link to them. Notebook exports, screenshots, scripts._
 
 ## 2. Hackathon prototype -> [`hackathon/`](hackathon/)
 
-> Your tool and your SDG for this hackathon are announced at the **start of Friday's class**.
-> Write them down here once you know them.
+**Project title:** FocusQuest
 
-**Project title:**
+**My pair partner:** Ana Talg Wolf
 
-**My pair partner:**
+**Tool we had to use:** Bolt.new or Lovable (the course brief allowed both); we used Lovable.
 
-**Tool we had to use:**
-
-**SDG we had to address:**
+**SDG we had to address:** SDG 4, Quality Education
 
 **What problem does it solve, and for whom?**
-_Name a real, specific user. "Everyone" is not a user._
+Students who struggle with focus, procrastination or keeping track of time may find it hard to start and finish study tasks. FocusQuest gives them more structure while studying, including students with ADHD-related focus difficulties. It does not diagnose or treat ADHD.
 
 **What did you build?**
-_Two or three sentences. What can a user actually do with it?_
+A study app that turns a PDF or pasted notes into small study quests. Students choose a topic, session length and energy level, use a focus timer, take a break and follow their progress.
 
 **Link to the live thing (if any):**
-_Deployed URL, workflow export, video demo - whatever proves it works._
+App link and project details: [`hackathon/FocusQuest Hackathon 1 README.pages`](hackathon/FocusQuest%20Hackathon%201%20README.pages). The app URL recorded there is https://map-my-study.lovable.app. Slides: [`hackathon/FocusQuest_Final_Presentation.key`](hackathon/FocusQuest_Final_Presentation.key).
 
 **How do I run it?**
-_Short instructions so someone else can start it._
+Follow [`hackathon/FocusQuest Hackathon 1 README.pages`](hackathon/FocusQuest%20Hackathon%201%20README.pages) and open the app linked there. No installation is required. Upload a PDF or paste notes, choose a focus length and start a quest. Sample notes are available for a demonstration.
 
 **Who did what?**
-_Be honest about the split of work between you and your partner._
+I wrote the README, the ethical reflection and the presentation slides; Ana Talg Wolf built the working product and the demo. We developed the concept, tested it and did the final review together.
 
 **Ethical reflection - what are the risks of your tool? Who could it harm?**
-_Every hackathon requires this. One honest paragraph beats three vague ones._
+The app may exclude students without a suitable device, reliable internet or enough English. Accessibility features need testing. The design assumes students have suitable course material and can judge AI suggestions; short sessions or an adventure map will not suit every learner or every subject. Uploaded notes may contain private or copyrighted information, so users need a clear explanation of processing, limited collection and storage, and protection for confidential files. Schools or employers could misuse activity records to judge effort, ability or disability. The prototype has not shown that it improves learning or reduces procrastination; voluntary testing with different students, including students with ADHD, is still needed.
 
 ### Checklist
 - [ ] Prototype code (or export / workflow file) is in `hackathon/`
-- [ ] This week's slides are in `hackathon/`
+- [x] This week's slides are in `hackathon/`
 - [ ] The prototype actually runs, and I wrote down how to run it
-- [ ] Ethical reflection written above
+- [x] Ethical reflection written above
 
 ---
 
