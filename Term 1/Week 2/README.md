@@ -7,7 +7,7 @@
 **What was the assignment?**
 
 **What did I hand in?**
-_List the files, or link to them. Notebook exports, screenshots, scripts._
+Workshop retake: see [Resit/Week 2/](../../Resit/Week%202/).
 
 **What did I find difficult, and how did I solve it?**
 
@@ -20,40 +20,37 @@ _List the files, or link to them. Notebook exports, screenshots, scripts._
 
 ## 2. Hackathon prototype -> [`hackathon/`](hackathon/)
 
-> Your tool and your SDG for this hackathon are announced at the **start of Friday's class**.
-> Write them down here once you know them.
+**Project title:** AI Study Stress Coach
 
-**Project title:**
+**My pair partner:** Max Lopez
 
-**My pair partner:**
+**Tool we had to use:** n8n
 
-**Tool we had to use:**
-
-**SDG we had to address:**
+**SDG we had to address:** SDG 3, Good Health & Well-being
 
 **What problem does it solve, and for whom?**
-_Name a real, specific user. "Everyone" is not a user._
+University and applied-science students can feel overwhelmed by stress, poor sleep, workload and deadlines. They may need help choosing one manageable next step. This tool offers general study support and is not a therapist or crisis service.
 
 **What did you build?**
-_Two or three sentences. What can a user actually do with it?_
+An n8n workflow with a short check-in form. Rules calculate a Low, Moderate or High stress category, and AI writes short study tips based on the answers. The workflow emails the advice to the student and logs the check-in in Google Sheets.
 
 **Link to the live thing (if any):**
-_Deployed URL, workflow export, video demo - whatever proves it works._
+Workflow export: [`hackathon/ai-study-stress-coach.json`](hackathon/ai-study-stress-coach.json). Slides: [`hackathon/ai-study-stress-coach-deck.pdf`](hackathon/ai-study-stress-coach-deck.pdf). Demo video: [`hackathon/AI Study Stress Coach - FINAL Short Meter Aligned.mp4`](hackathon/AI%20Study%20Stress%20Coach%20-%20FINAL%20Short%20Meter%20Aligned.mp4).
 
 **How do I run it?**
-_Short instructions so someone else can start it._
+Import [`hackathon/ai-study-stress-coach.json`](hackathon/ai-study-stress-coach.json) into n8n. Connect the OpenAI, Gmail and Google Sheets nodes to your own accounts and choose the sheet for the log. Open the form and test it with fictional details and an authorised test inbox.
 
 **Who did what?**
-_Be honest about the split of work between you and your partner._
+Max Lopez designed and built the n8n flow (scoring rule, AI safety instructions, email, Google Sheets logging) and did the testing and demo; I made the presentation.
 
 **Ethical reflection - what are the risks of your tool? Who could it harm?**
-_Every hackathon requires this. One honest paragraph beats three vague ones._
+AI advice can be wrong or too general, so prompts and test cases need review. Names, email addresses and well-being answers are sensitive; we should collect less data, restrict access and set a deletion period. The form can confirm a submission before the email succeeds, so executions need monitoring and support options should be visible immediately. Students may mistake a category for a diagnosis. We should explain that it comes from project rules and direct serious concerns to human support.
 
 ### Checklist
-- [ ] Prototype code (or export / workflow file) is in `hackathon/`
-- [ ] This week's slides are in `hackathon/`
+- [x] Prototype code (or export / workflow file) is in `hackathon/`
+- [x] This week's slides are in `hackathon/`
 - [ ] The prototype actually runs, and I wrote down how to run it
-- [ ] Ethical reflection written above
+- [x] Ethical reflection written above
 
 ---
 
