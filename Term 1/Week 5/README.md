@@ -7,7 +7,7 @@
 **What was the assignment?**
 
 **What did I hand in?**
-_List the files, or link to them. Notebook exports, screenshots, scripts._
+Workshop retake: see [Resit/Week 5/](../../Resit/Week%205/).
 
 **What did I find difficult, and how did I solve it?**
 
@@ -20,40 +20,37 @@ _List the files, or link to them. Notebook exports, screenshots, scripts._
 
 ## 2. Hackathon prototype -> [`hackathon/`](hackathon/)
 
-> Your tool and your SDG for this hackathon are announced at the **start of Friday's class**.
-> Write them down here once you know them.
+**Project title:** Model Showdown: Credit Card Default Prediction
 
-**Project title:**
+**My pair partner:** Bart Bruggeling (assigned pair)
 
-**My pair partner:**
+**Tool we had to use:** scikit-learn (Python machine-learning library), in a Jupyter notebook
 
-**Tool we had to use:**
-
-**SDG we had to address:**
+**SDG we had to address:** SDG 8, Decent Work and Economic Growth
 
 **What problem does it solve, and for whom?**
-_Name a real, specific user. "Everyone" is not a user._
+A credit risk analyst needs to identify customers who may miss their next credit card payment. A prediction can support decisions about help or risk management. It should not automatically decide who receives financial services.
 
 **What did you build?**
-_Two or three sentences. What can a user actually do with it?_
+A Python notebook in Google Colab, using scikit-learn, that compares K-Nearest Neighbours, Logistic Regression and Random Forest on the UCI credit card default dataset. We used recall as the main measure because missing a customer who defaults matters. The notebook recommends Random Forest and ends with a prediction for a made-up customer.
 
 **Link to the live thing (if any):**
-_Deployed URL, workflow export, video demo - whatever proves it works._
+Notebook: [`hackathon/Hackathon5-model showdown.ipynb`](hackathon/Hackathon5-model%20showdown.ipynb). Project details: [`hackathon/README-Hackathon 5.md`](hackathon/README-Hackathon%205.md). Slides: [`hackathon/Hackathon5_Model_Showdown_Wk5.pdf`](hackathon/Hackathon5_Model_Showdown_Wk5.pdf). Additional PDF: [`hackathon/Hackathons 5 - Modal showdown.pdf`](hackathon/Hackathons%205%20-%20Modal%20showdown.pdf).
 
 **How do I run it?**
-_Short instructions so someone else can start it._
+Open [`hackathon/Hackathon5-model showdown.ipynb`](hackathon/Hackathon5-model%20showdown.ipynb) in Google Colab and run it from top to bottom. It downloads the dataset from UCI, trains the models and produces the comparison and example prediction. Full instructions: [`hackathon/README-Hackathon 5.md`](hackathon/README-Hackathon%205.md).
 
 **Who did what?**
-_Be honest about the split of work between you and your partner._
+_(Lili: one sentence on how you and Bart split the work.)_
 
 **Ethical reflection - what are the risks of your tool? Who could it harm?**
-_Every hackathon requires this. One honest paragraph beats three vague ones._
+Wrong predictions can affect people’s financial situations. The historical Taiwan dataset may not represent current customers or other populations, and features such as sex, age, education and marriage status raise fairness concerns. The model should support a human decision rather than automatically control access to credit. Errors and performance for different groups need monitoring. Choosing recall responds to the cost of missed defaults, but it does not remove unfair or incorrect decisions.
 
 ### Checklist
-- [ ] Prototype code (or export / workflow file) is in `hackathon/`
-- [ ] This week's slides are in `hackathon/`
+- [x] Prototype code (or export / workflow file) is in `hackathon/`
+- [x] This week's slides are in `hackathon/`
 - [ ] The prototype actually runs, and I wrote down how to run it
-- [ ] Ethical reflection written above
+- [x] Ethical reflection written above
 
 ---
 
