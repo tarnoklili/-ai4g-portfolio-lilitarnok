@@ -7,7 +7,7 @@
 **What was the assignment?**
 
 **What did I hand in?**
-_List the files, or link to them. Notebook exports, screenshots, scripts._
+Workshop retake: see [Resit/Week 6/](../../Resit/Week%206/).
 
 **What did I find difficult, and how did I solve it?**
 
@@ -20,40 +20,37 @@ _List the files, or link to them. Notebook exports, screenshots, scripts._
 
 ## 2. Hackathon prototype -> [`hackathon/`](hackathon/)
 
-> Your tool and your SDG for this hackathon are announced at the **start of Friday's class**.
-> Write them down here once you know them.
+**Project title:** AI Live Coding Pulse
 
-**Project title:**
+**My pair partner:** Benjamin van Teeseling
 
-**My pair partner:**
+**Tool we had to use:** A pre-trained Hugging Face sentiment model, run with the Python transformers library
 
-**Tool we had to use:**
-
-**SDG we had to address:**
+**SDG we had to address:** SDG 9, Industry, Innovation and Infrastructure
 
 **What problem does it solve, and for whom?**
-_Name a real, specific user. "Everyone" is not a user._
+An engineering team lead at a small or medium software company needs to decide whether to try, buy or wait for AI coding tools. Tools change quickly, and opinions are spread across many comments. The lead has little time to read them all.
 
 **What did you build?**
-_Two or three sentences. What can a user actually do with it?_
+A tool that collects Hacker News comments about AI coding tools every 15 minutes and labels them negative, neutral or positive. A dashboard shows mood over time and lets the user open the comments behind a change. On 50 comments labelled by hand, the cardiffnlp model agreed with 35 labels, compared with 12 for VADER.
 
 **Link to the live thing (if any):**
-_Deployed URL, workflow export, video demo - whatever proves it works._
+Project archive: [`hackathon/wetransfer_hackathon_2026-10-15_1821.zip`](hackathon/wetransfer_hackathon_2026-10-15_1821.zip). Documentation: [`hackathon/README.md`](hackathon/README.md). Slides: [`hackathon/AI Coding Pulse Hackathon 6 - Benjamin & Lili.pdf`](hackathon/AI%20Coding%20Pulse%20Hackathon%206%20-%20Benjamin%20%26%20Lili.pdf).
 
 **How do I run it?**
-_Short instructions so someone else can start it._
+The commands in [`hackathon/README.md`](hackathon/README.md) are `pip install -r requirements.txt` and `python collect.py` for collection. For the dashboard, use `pip install -r requirements-dashboard.txt` and `streamlit run dashboard.py`. The listed project archive is [`hackathon/wetransfer_hackathon_2026-10-15_1821.zip`](hackathon/wetransfer_hackathon_2026-10-15_1821.zip).
 
 **Who did what?**
-_Be honest about the split of work between you and your partner._
+Benjamin chose the Hugging Face models, picked the topic and wrote the code with help from Claude (AI). I labelled the 50 randomised comments for the honest test and helped with the presentation.
 
 **Ethical reflection - what are the risks of your tool? Who could it harm?**
-_Every hackathon requires this. One honest paragraph beats three vague ones._
+Hacker News commenters are a technical group and do not represent all developers or the industry. A team lead could make a poor decision by treating this as a general opinion survey. The model was trained on tweets and struggles with sarcasm and mixed or mild opinions; bots were not filtered and could cause a peak. We store no usernames, but comment IDs can lead back to people’s profiles. We should store only what is needed and must not use the tool to judge individuals or as the only basis for a decision.
 
 ### Checklist
 - [ ] Prototype code (or export / workflow file) is in `hackathon/`
-- [ ] This week's slides are in `hackathon/`
+- [x] This week's slides are in `hackathon/`
 - [ ] The prototype actually runs, and I wrote down how to run it
-- [ ] Ethical reflection written above
+- [x] Ethical reflection written above
 
 ---
 
