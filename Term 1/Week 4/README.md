@@ -20,40 +20,37 @@ _List the files, or link to them. Notebook exports, screenshots, scripts._
 
 ## 2. Hackathon prototype -> [`hackathon/`](hackathon/)
 
-> Your tool and your SDG for this hackathon are announced at the **start of Friday's class**.
-> Write them down here once you know them.
+**Project title:** Urban Heat — Make Room for Nature
 
-**Project title:**
+**My pair partner:** Luuk Aalders (assigned pair)
 
-**My pair partner:**
+**Tool we had to use:** ComfyUI (node-based Stable Diffusion image and video generation)
 
-**Tool we had to use:**
-
-**SDG we had to address:**
+**SDG we had to address:** SDG 13, Climate Action
 
 **What problem does it solve, and for whom?**
-_Name a real, specific user. "Everyone" is not a user._
+Students who live or study in Dutch cities may spend time in hot, paved streets with little shade. The film aims to help them understand why shade and greenery matter in public spaces. This audience choice has not been tested with students.
 
 **What did you build?**
-_Two or three sentences. What can a user actually do with it?_
+A short film with six AI-generated shots. Two students move from a hot, exposed space to a shaded bench. We used ComfyUI to turn starting images and motion prompts into clips, then assembled the clips in a separate video editor.
 
 **Link to the live thing (if any):**
-_Deployed URL, workflow export, video demo - whatever proves it works._
+Project details: [`hackathon/README.md`](hackathon/README.md). Workflow exports: [`hackathon/Text to image model Minor copy.json`](hackathon/Text%20to%20image%20model%20Minor%20copy.json), [`hackathon/Background mask model.json`](hackathon/Background%20mask%20model.json) and [`hackathon/Image to video generator minor copy.json`](hackathon/Image%20to%20video%20generator%20minor%20copy.json). Slides: [`hackathon/Urban_Heat_Presentation.pptx`](hackathon/Urban_Heat_Presentation.pptx).
 
 **How do I run it?**
-_Short instructions so someone else can start it._
+Use a local ComfyUI installation with Wan 2.2 support and a compatible GPU. Import [`hackathon/Image to video generator minor copy.json`](hackathon/Image%20to%20video%20generator%20minor%20copy.json), select the required models and add a starting image and prompts. See [`hackathon/README.md`](hackathon/README.md) for the model names and generation steps.
 
 **Who did what?**
-_Be honest about the split of work between you and your partner._
+_(Lili: one sentence on how you and Luuk split the work.)_
 
 **Ethical reflection - what are the risks of your tool? Who could it harm?**
-_Every hackathon requires this. One honest paragraph beats three vague ones._
+Realistic AI scenes could be mistaken for footage of a real place or heatwave. We avoided named locations and temperature claims, and the characters are fictional, but we still need a visible AI-generated label. Dry leaves do not prove climate change, and shade does not solve the wider urban heat problem. Repeated generation used computing resources; one render took about an hour. We did not measure electricity use, so we cannot claim a low environmental impact. We reused starting images, should record the total generations and avoid unnecessary rerenders. We have not tested whether the film improves understanding.
 
 ### Checklist
-- [ ] Prototype code (or export / workflow file) is in `hackathon/`
-- [ ] This week's slides are in `hackathon/`
+- [x] Prototype code (or export / workflow file) is in `hackathon/`
+- [x] This week's slides are in `hackathon/`
 - [ ] The prototype actually runs, and I wrote down how to run it
-- [ ] Ethical reflection written above
+- [x] Ethical reflection written above
 
 ---
 
