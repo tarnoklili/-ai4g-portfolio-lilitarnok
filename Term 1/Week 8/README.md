@@ -7,11 +7,16 @@
 ## 1. Homework & workshop assignments -> [`homework/`](homework/)
 
 **What was the assignment?**
+Design Thinking, Empathize: explore who we could help, form teams of five, and after class submit the team
+members and a team contract.
 
 **What did I hand in?**
-_List the files, or link to them. Notebook exports, screenshots, scripts._
+Nothing yet. I missed this session, so I am not in a team and could not submit the team contract. I have
+emailed the teachers to ask to be placed in a team; I will add our team contract and my Empathize notes here
+as soon as I have a team.
 
 **What did I find difficult, and how did I solve it?**
+_(to be filled in once I have a team)_
 
 ### Checklist
 - [ ] My workshop / homework files are in `homework/`
