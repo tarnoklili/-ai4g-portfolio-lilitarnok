@@ -14,7 +14,13 @@ API call to a language model.
 **What did I hand in?**
 `homework/Week3_Workshop_Lili.ipynb`: the workshop notebook with Exercises 1-3, the Food Bank
 Manager (including the bonus: families served and a shortage list) and the three reflections,
-with every cell except the API cells run in order. All names and data in it are made up, as the course asks.
+with every cell except the API cells run in order. All names and data in the exercises are made up, as the
+course asks.
+
+`homework/denhaag_neighbourhoods_2024.csv` and the "Dataset detective" section at the end of the notebook
+(homework 4): real open data from CBS (Statistics Netherlands) for the 114 neighbourhoods of The Hague.
+34 neighbourhoods, with 42,420 residents, have no average income, because CBS only publishes it for areas with
+at least 2,500 people in private households. Four of the missing ones have many low incomes, such as Waldeck-Zuid.
 
 Exercise 4 (the API call) is written in the notebook but **not run in this copy**: it needs my own
 API key, and the course rule is that the key never goes in a notebook or in the portfolio. The
