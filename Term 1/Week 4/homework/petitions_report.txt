@@ -1,0 +1,16 @@
+=== Community Feedback Report ===
+Responses analysed: 68
+Average words per response: 10.7
+
+Top 5 keywords:
+  road: 22
+  require: 13
+  cyclists: 13
+  roads: 10
+  all: 8
+
+Urgent responses: 1
+  ! Legalise pavement cycling where roads are unsafe
+
+Mood: mostly negative (0 positive words, 1 negative words)
+Numbers mentioned: 1980, 2, 30, 60, 30, 27, 1988, 2, 70, 24, 29, 7, 75, 5, 30, 2028, 20
