@@ -50,7 +50,7 @@ Students who struggle with focus, procrastination or keeping track of time may f
 A study app that turns a PDF or pasted notes into small study quests. Students choose a topic, session length and energy level, use a focus timer, take a break and follow their progress.
 
 **Link to the live thing (if any):**
-App link and project details: [`hackathon/FocusQuest Hackathon 1 README.pages`](hackathon/FocusQuest%20Hackathon%201%20README.pages). The app URL recorded there is https://map-my-study.lovable.app. Slides: [`hackathon/FocusQuest_Final_Presentation.key`](hackathon/FocusQuest_Final_Presentation.key).
+App link and project details: [`hackathon/FocusQuest Hackathon 1 README.pages`](hackathon/FocusQuest%20Hackathon%201%20README.pages) (PDF copy: [`FocusQuest Hackathon 1 README.pdf`](hackathon/FocusQuest%20Hackathon%201%20README.pdf)). Ethical reflection: [`FocusQuest Ethical Reflection.pdf`](hackathon/FocusQuest%20Ethical%20Reflection.pdf). The two PDF copies were made with LibreOffice, so the spacing differs a little from the Pages originals; the text is the same. The app URL recorded there is https://map-my-study.lovable.app. Slides: [`hackathon/FocusQuest_Final_Presentation.key`](hackathon/FocusQuest_Final_Presentation.key).
 
 **How do I run it?**
 Follow [`hackathon/FocusQuest Hackathon 1 README.pages`](hackathon/FocusQuest%20Hackathon%201%20README.pages) and open the app linked there. No installation is required. Upload a PDF or paste notes, choose a focus length and start a quest. Sample notes are available for a demonstration.
