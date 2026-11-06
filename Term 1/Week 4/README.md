@@ -5,15 +5,31 @@
 ## 1. Homework & workshop assignments -> [`homework/`](homework/)
 
 **What was the assignment?**
+The Week 4 workshop notebook: cleaning one piece of feedback with string methods, counting words
+across responses (a "bag of words", with stopwords), writing and reading a file with `with open()`,
+and the big assignment **Community Feedback Analyzer**: read a file of citizen feedback, clean,
+split and count the words, and write a report with the number of responses, the average words
+per response, the top 5 keywords and the urgent responses.
 
 **What did I hand in?**
-_List the files, or link to them. Notebook exports, screenshots, scripts._
+- `homework/Week4_Workshop_Lili.ipynb`: the workshop notebook with every exercise and both
+  reflections, run from top to bottom.
+- `homework/community_feedback.txt`: the made-up feedback file the analyzer reads (12 responses).
+- `homework/feedback_report.txt`: the report it writes. The report also has a mood score and the
+  numbers people mentioned. The notebook additionally runs a word search.
 
 **What did I find difficult, and how did I solve it?**
+Punctuation: without stripping `.,!?:;` from every word, `"great,"` and `"great"` count as two
+different words. Deciding what counts as "urgent" was harder than the code: my four
+words miss a serious message that does not use them, which is what the reflection is about.
+
+**AI use:** As the course allows, I used Claude (an AI assistant) for this notebook: it wrote and
+ran the code and drafted the written answers. The notebook was run from top to bottom, so the
+outputs you see are real.
 
 ### Checklist
-- [ ] My workshop / homework files are in `homework/`
-- [ ] Everything runs without errors, or I explained what does not and why
+- [x] My workshop / homework files are in `homework/`
+- [x] Everything runs without errors, or I explained what does not and why
 
 ---
 
