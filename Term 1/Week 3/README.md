@@ -5,15 +5,36 @@
 ## 1. Homework & workshop assignments -> [`homework/`](homework/)
 
 **What was the assignment?**
+The Week 3 workshop notebook: lists (Food Bank Inventory), analysing list data (Wage Gap Analyzer),
+dictionaries (City Services Map, with a district that is missing from the data), and the big
+assignment **Food Bank Manager**: a menu program a volunteer could use to show stock, register
+donations, hand out packages, warn about low stock and print a report. Plus Exercise 4, the first
+API call to a language model.
 
 **What did I hand in?**
-_List the files, or link to them. Notebook exports, screenshots, scripts._
+`homework/Week3_Workshop_Lili.ipynb`: the workshop notebook with Exercises 1-3, the Food Bank
+Manager (including the bonus: families served and a shortage list) and the three reflections,
+with every cell except the API cells run in order. All names and data in it are made up, as the course asks.
+
+Exercise 4 (the API call) is written in the notebook but **not run in this copy**: it needs my own
+API key, and the course rule is that the key never goes in a notebook or in the portfolio. The
+course page says the key and Exercise 4 are "not part of your portfolio"; the notebook's homework list
+also asks for a screenshot of `ask.py` running in Cursor, which is not included here because it needs
+my own key and laptop.
 
 **What did I find difficult, and how did I solve it?**
+Handing out a package when an item has run out. Subtracting 1 from an item at 0 gives -1, so the
+loop has to skip it with `continue`. In the test run a small donation of baby food runs out after two
+packages, and the program warns about it and puts it on the shortage list. "Rice" and "rice" would
+also become two different items, so the program cleans the name with `.strip().lower()` first.
+
+**AI use:** As the course allows, I used Claude (an AI assistant) for this notebook: it wrote and
+ran the code and drafted the written answers. Every cell except the API cells was run in order, so the
+outputs you see are real.
 
 ### Checklist
-- [ ] My workshop / homework files are in `homework/`
-- [ ] Everything runs without errors, or I explained what does not and why
+- [x] My workshop / homework files are in `homework/`
+- [x] Everything runs without errors, or I explained what does not and why
 
 ---
 
