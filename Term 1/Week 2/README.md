@@ -5,15 +5,22 @@
 ## 1. Homework & workshop assignments -> [`homework/`](homework/)
 
 **What was the assignment?**
+The Week 2 workshop notebook (Loops & Functions). I missed this workshop, so I did it as an attendance retake.
 
 **What did I hand in?**
-Workshop retake: see [Resit/Week 2/](../../Resit/Week%202/).
+The completed, run notebook is in my Resit folder: [`Resit/Week 2/homework/Week2_Workshop_Lili.ipynb`](../../Resit/Week%202/homework/Week2_Workshop_Lili.ipynb),
+with a short explanation in [`Resit/Week 2/README.md`](../../Resit/Week%202/README.md).
 
 **What did I find difficult, and how did I solve it?**
+See [`Resit/Week 2/README.md`](../../Resit/Week%202/README.md).
+
+**AI use:** As the course allows, I used Claude (an AI assistant) for this notebook: it wrote and
+ran the code and drafted the written answers. The notebook was run from top to bottom, so the
+outputs you see are real.
 
 ### Checklist
-- [ ] My workshop / homework files are in `homework/`
-- [ ] Everything runs without errors, or I explained what does not and why
+- [x] My workshop / homework files are in `homework/` (for this week: in `Resit/Week 2/homework/`)
+- [x] Everything runs without errors, or I explained what does not and why
 
 ---
 
