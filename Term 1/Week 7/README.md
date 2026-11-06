@@ -5,15 +5,37 @@
 ## 1. Homework & workshop assignments -> [`homework/`](homework/)
 
 **What was the assignment?**
+The Week 7 workshop was group work: the class became three research groups (object recognition, landmark
+detection, segmentation). Each group built a small app (an MVP) on its own photos, wrote down the right answers
+before trusting the model, evaluated it and presented it. Homework: put the group's work in this folder,
+without photos of people.
 
 **What did I hand in?**
-_List the files, or link to them. Notebook exports, screenshots, scripts._
+I missed this workshop, so I had no group. I asked the teachers by email what to hand in instead; until they
+answer, this is **my individual version** of the object recognition brief, made with the course's starter notebook.
+- `homework/Week7_ObjectRecognition_Lili.ipynb`: a bicycle counter ("how many bicycles are parked in this
+  photo?") on 9 openly licensed photos from the COCO validation set that show bicycles. Every photo where a
+  real person might be visible was left out. The answers it is scored against are the bicycle boxes drawn by
+  COCO's human labellers, so the scores are **provisional** until I count the bikes myself. It compares two
+  models (Mask R-CNN and OWLv2) and has my evaluation, the "who could be harmed" answer and the photo credits.
+- `homework/coco_bicycle_truth.json`: the COCO-labelled bicycle boxes, and the photographer, licence and
+  original link of every photo.
+- `homework/best.png` and `homework/worst.png`: the app on its best and its worst photo, for slides.
 
 **What did I find difficult, and how did I solve it?**
+The model counts parts of a bicycle, such as a wheel, as extra bicycles. At the starter's threshold it drew
+29 boxes where COCO labels 14 bicycles (10 right). A higher threshold gives a better count, but
+choosing it on the same 9 photos would make the result look better than it is, so the threshold stayed at 0.5.
+The COCO labels are not perfect either: in one photo a single label covers almost the whole picture.
+
+**AI use:** As the course allows, I used Claude (an AI assistant) for this notebook: it chose the photos,
+wrote and ran the code and drafted the written answers, and an AI model checked the photos for people and
+looked at the model's boxes. The notebook was run from top to bottom (except the
+optional install cell), so the outputs you see are real.
 
 ### Checklist
-- [ ] My workshop / homework files are in `homework/`
-- [ ] Everything runs without errors, or I explained what does not and why
+- [x] My workshop / homework files are in `homework/`
+- [x] Everything runs without errors, or I explained what does not and why
 
 ---
 
