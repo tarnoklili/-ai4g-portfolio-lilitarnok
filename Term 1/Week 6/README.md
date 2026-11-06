@@ -5,15 +5,22 @@
 ## 1. Homework & workshop assignments -> [`homework/`](homework/)
 
 **What was the assignment?**
+The Week 6 workshop notebook (Language Models). I missed this workshop, so I did it as an attendance retake.
 
 **What did I hand in?**
-Workshop retake: see [Resit/Week 6/](../../Resit/Week%206/).
+The completed, run notebook is in my Resit folder: [`Resit/Week 6/homework/Week6_Workshop_Lili.ipynb`](../../Resit/Week%206/homework/Week6_Workshop_Lili.ipynb),
+with a short explanation in [`Resit/Week 6/README.md`](../../Resit/Week%206/README.md).
 
 **What did I find difficult, and how did I solve it?**
+See [`Resit/Week 6/README.md`](../../Resit/Week%206/README.md).
+
+**AI use:** As the course allows, I used Claude (an AI assistant) for this notebook: it wrote and
+ran the code and drafted the written answers. The notebook was run from top to bottom, so the
+outputs you see are real.
 
 ### Checklist
-- [ ] My workshop / homework files are in `homework/`
-- [ ] Everything runs without errors, or I explained what does not and why
+- [x] My workshop / homework files are in `homework/` (for this week: in `Resit/Week 6/homework/`)
+- [x] Everything runs without errors, or I explained what does not and why
 
 ---
 
@@ -35,10 +42,10 @@ An engineering team lead at a small or medium software company needs to decide w
 A tool that collects Hacker News comments about AI coding tools every 15 minutes and labels them negative, neutral or positive. A dashboard shows mood over time and lets the user open the comments behind a change. On 50 comments labelled by hand, the cardiffnlp model agreed with 35 labels, compared with 12 for VADER.
 
 **Link to the live thing (if any):**
-Project archive: [`hackathon/wetransfer_hackathon_2026-10-15_1821.zip`](hackathon/wetransfer_hackathon_2026-10-15_1821.zip). Documentation: [`hackathon/README.md`](hackathon/README.md). Slides: [`hackathon/AI Coding Pulse Hackathon 6 - Benjamin & Lili.pdf`](hackathon/AI%20Coding%20Pulse%20Hackathon%206%20-%20Benjamin%20%26%20Lili.pdf).
+Code and data: the Python files in [`hackathon/`](hackathon/) (`collect.py`, `dashboard.py`, `compare.py`, `label_sample.py`, `config.py`) and the data in [`hackathon/data/`](hackathon/data/), unpacked from the original archive [`hackathon/wetransfer_hackathon_2026-10-15_1821.zip`](hackathon/wetransfer_hackathon_2026-10-15_1821.zip). Documentation: [`hackathon/README.md`](hackathon/README.md). Slides: [`hackathon/AI Coding Pulse Hackathon 6 - Benjamin & Lili.pdf`](hackathon/AI%20Coding%20Pulse%20Hackathon%206%20-%20Benjamin%20%26%20Lili.pdf).
 
 **How do I run it?**
-The commands in [`hackathon/README.md`](hackathon/README.md) are `pip install -r requirements.txt` and `python collect.py` for collection. For the dashboard, use `pip install -r requirements-dashboard.txt` and `streamlit run dashboard.py`. The listed project archive is [`hackathon/wetransfer_hackathon_2026-10-15_1821.zip`](hackathon/wetransfer_hackathon_2026-10-15_1821.zip).
+The commands in [`hackathon/README.md`](hackathon/README.md) are `pip install -r requirements.txt` and `python collect.py` for collection. For the dashboard, use `pip install -r requirements-dashboard.txt` and `streamlit run dashboard.py`. All these files are in [`hackathon/`](hackathon/).
 
 **Who did what?**
 Benjamin chose the Hugging Face models, picked the topic and wrote the code with help from Claude (AI). I labelled the 50 randomised comments for the honest test and helped with the presentation.
