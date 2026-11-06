@@ -1,0 +1,19 @@
+=== Community Feedback Report ===
+Responses analysed: 12
+Average words per response: 9.5
+
+Top 5 keywords:
+  bike: 3
+  park: 3
+  great: 2
+  broken: 2
+  full: 2
+
+Urgent responses: 4
+  ! ALERT: broken streetlight on the corner for 3 weeks.
+  ! The crossing near the school feels unsafe for children.
+  ! Danger: cars drive 50 in a 30 zone on our street.
+  ! Broken glass on the bike path again!
+
+Mood: mostly negative (7 positive words, 8 negative words)
+Numbers mentioned: 3, 84, 50, 30
