@@ -17,6 +17,10 @@ per response, the top 5 keywords and the urgent responses.
 - `homework/community_feedback.txt`: the made-up feedback file the analyzer reads (12 responses).
 - `homework/feedback_report.txt`: the report it writes. The report also has a mood score and the
   numbers people mentioned. The notebook additionally runs a word search.
+- `homework/uk_petitions_roads.txt` and `homework/petitions_report.txt` (the homework: real public text):
+  the same analyzer on the titles of 68 real UK Parliament petitions about roads and cycling. My urgent words
+  flag only 1 of them, while at least 8 more are clearly about safety. The last section of the notebook explains
+  what the analyzer reveals and what it misses.
 
 **What did I find difficult, and how did I solve it?**
 Punctuation: without stripping `.,!?:;` from every word, `"great,"` and `"great"` count as two
