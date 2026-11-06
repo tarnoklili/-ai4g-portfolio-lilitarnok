@@ -1,0 +1,232 @@
+{
+ "000000109055.jpg": {
+  "bicycle_boxes": [
+   [
+    2.1,
+    2.1,
+    639.7,
+    473.8
+   ]
+  ],
+  "licence": "Attribution-NonCommercial-ShareAlike License",
+  "licence_url": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
+  "photo_url": "http://farm1.staticflickr.com/21/37248397_dbe284ca85_z.jpg",
+  "coco_url": "http://images.cocodataset.org/val2017/000000109055.jpg",
+  "credit": {
+   "title": "Fort by wheels",
+   "photographer": "hexion",
+   "flickr_page": "https://www.flickr.com/photos/hexion/37248397/",
+   "licence": "CC BY-NC-SA 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+   "changes": "made smaller, bicycle boxes and labels drawn on it; changed versions shared under the same licence as the original"
+  }
+ },
+ "000000274687.jpg": {
+  "bicycle_boxes": [
+   [
+    2.1,
+    104.3,
+    640.0,
+    474.8
+   ]
+  ],
+  "licence": "Attribution-ShareAlike License",
+  "licence_url": "http://creativecommons.org/licenses/by-sa/2.0/",
+  "photo_url": "http://farm4.staticflickr.com/3602/4075988767_c3b2313002_z.jpg",
+  "coco_url": "http://images.cocodataset.org/val2017/000000274687.jpg",
+  "credit": {
+   "title": null,
+   "photographer": "not recovered: the original Flickr page could not be retrieved",
+   "flickr_page": null,
+   "licence": "CC BY-SA 2.0 (as recorded in the COCO dataset)",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+   "flickr_lookup": "https://www.flickr.com/photo.gne?id=4075988767",
+   "changes": "made smaller, bicycle boxes and labels drawn on it; changed versions shared under the same licence as the original"
+  }
+ },
+ "000000426166.jpg": {
+  "bicycle_boxes": [
+   [
+    105.7,
+    172.8,
+    255.6,
+    296.3
+   ]
+  ],
+  "licence": "Attribution License",
+  "licence_url": "http://creativecommons.org/licenses/by/2.0/",
+  "photo_url": "http://farm4.staticflickr.com/3052/2319776213_ced79b883c_z.jpg",
+  "coco_url": "http://images.cocodataset.org/val2017/000000426166.jpg",
+  "credit": {
+   "title": "Blue Bike",
+   "photographer": "Talbot Troy (Rusty Darbonne)",
+   "flickr_page": "https://www.flickr.com/photos/rustydarbonne/2319776213/",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+   "changes": "made smaller, bicycle boxes and labels drawn on it; changed versions shared under the same licence as the original"
+  }
+ },
+ "000000101762.jpg": {
+  "bicycle_boxes": [
+   [
+    41.5,
+    0.0,
+    514.4,
+    344.8
+   ]
+  ],
+  "licence": "Attribution-NonCommercial-ShareAlike License",
+  "licence_url": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
+  "photo_url": "http://farm3.staticflickr.com/2068/2135673297_6c75c29c61_z.jpg",
+  "coco_url": "http://images.cocodataset.org/val2017/000000101762.jpg",
+  "credit": {
+   "title": "Untitled",
+   "photographer": "thisisforever",
+   "flickr_page": "https://www.flickr.com/photos/thisisforever/2135673297/",
+   "licence": "CC BY-NC-SA 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+   "changes": "made smaller, bicycle boxes and labels drawn on it; changed versions shared under the same licence as the original"
+  }
+ },
+ "000000135670.jpg": {
+  "bicycle_boxes": [
+   [
+    196.8,
+    199.7,
+    301.8,
+    373.3
+   ]
+  ],
+  "licence": "Attribution-ShareAlike License",
+  "licence_url": "http://creativecommons.org/licenses/by-sa/2.0/",
+  "photo_url": "http://farm3.staticflickr.com/2528/3925803088_79760dbe81_z.jpg",
+  "coco_url": "http://images.cocodataset.org/val2017/000000135670.jpg",
+  "credit": {
+   "title": null,
+   "photographer": "not recovered: the original Flickr page could not be retrieved",
+   "flickr_page": null,
+   "licence": "CC BY-SA 2.0 (as recorded in the COCO dataset)",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+   "flickr_lookup": "https://www.flickr.com/photo.gne?id=3925803088",
+   "changes": "made smaller, bicycle boxes and labels drawn on it; changed versions shared under the same licence as the original"
+  }
+ },
+ "000000242287.jpg": {
+  "bicycle_boxes": [
+   [
+    19.2,
+    383.2,
+    333.7,
+    627.6
+   ]
+  ],
+  "licence": "Attribution License",
+  "licence_url": "http://creativecommons.org/licenses/by/2.0/",
+  "photo_url": "http://farm3.staticflickr.com/2626/4072194513_edb6acfb2b_z.jpg",
+  "coco_url": "http://images.cocodataset.org/val2017/000000242287.jpg",
+  "credit": {
+   "title": "Old Door and a Bike",
+   "photographer": "Jim Kelly (pthread1981)",
+   "flickr_page": "https://www.flickr.com/photos/pthread/4072194513/",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+   "changes": "made smaller, bicycle boxes and labels drawn on it; changed versions shared under the same licence as the original"
+  }
+ },
+ "000000008899.jpg": {
+  "bicycle_boxes": [
+   [
+    23.6,
+    346.1,
+    73.5,
+    450.1
+   ]
+  ],
+  "licence": "Attribution-NonCommercial License",
+  "licence_url": "http://creativecommons.org/licenses/by-nc/2.0/",
+  "photo_url": "http://farm8.staticflickr.com/7273/7722123984_0d123099bd_z.jpg",
+  "coco_url": "http://images.cocodataset.org/val2017/000000008899.jpg",
+  "credit": {
+   "title": "127 Henry Street, New York, NY",
+   "photographer": "Zach Korb",
+   "flickr_page": "https://www.flickr.com/photos/zkorb/7722123984/",
+   "licence": "CC BY-NC 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-nc/2.0/",
+   "changes": "made smaller, bicycle boxes and labels drawn on it; changed versions shared under the same licence as the original"
+  }
+ },
+ "000000185157.jpg": {
+  "bicycle_boxes": [
+   [
+    235.3,
+    554.7,
+    374.4,
+    638.6
+   ],
+   [
+    11.6,
+    531.2,
+    297.5,
+    640.0
+   ],
+   [
+    148.3,
+    575.4,
+    222.2,
+    640.0
+   ],
+   [
+    114.7,
+    522.2,
+    174.3,
+    575.3
+   ],
+   [
+    0.0,
+    511.2,
+    58.9,
+    626.1
+   ],
+   [
+    57.7,
+    555.7,
+    95.0,
+    574.9
+   ]
+  ],
+  "licence": "Attribution-NonCommercial License",
+  "licence_url": "http://creativecommons.org/licenses/by-nc/2.0/",
+  "photo_url": "http://farm5.staticflickr.com/4037/5075371191_1d6b0497f6_z.jpg",
+  "coco_url": "http://images.cocodataset.org/val2017/000000185157.jpg",
+  "credit": {
+   "title": "Street Signs",
+   "photographer": "Jason Pier in DC",
+   "flickr_page": "https://www.flickr.com/photos/jasonpier/5075371191/",
+   "licence": "CC BY-NC 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-nc/2.0/",
+   "changes": "made smaller, bicycle boxes and labels drawn on it; changed versions shared under the same licence as the original"
+  }
+ },
+ "000000164115.jpg": {
+  "bicycle_boxes": [
+   [
+    70.8,
+    182.3,
+    180.9,
+    377.8
+   ]
+  ],
+  "licence": "Attribution-NonCommercial-ShareAlike License",
+  "licence_url": "http://creativecommons.org/licenses/by-nc-sa/2.0/",
+  "photo_url": "http://farm4.staticflickr.com/3070/2807365025_80671b351d_z.jpg",
+  "coco_url": "http://images.cocodataset.org/val2017/000000164115.jpg",
+  "credit": {
+   "title": "Surfboard Rack",
+   "photographer": "David (randomcuriosity)",
+   "flickr_page": "https://www.flickr.com/photos/randomcuriosity/2807365025/",
+   "licence": "CC BY-NC-SA 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-nc-sa/2.0/",
+   "changes": "made smaller, bicycle boxes and labels drawn on it; changed versions shared under the same licence as the original"
+  }
+ }
+}
