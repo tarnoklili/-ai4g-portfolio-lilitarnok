@@ -49,7 +49,7 @@ outputs you see are real.
 
 **Project title:** Rebuild
 
-**My pair partner:** Felix
+**My pair partner:** Felix Reichle
 
 **Tool we had to use:** Gemini API from Python, with a Streamlit interface
 
@@ -62,7 +62,7 @@ People leaving prison, moving to another country, losing housing or going throug
 A Streamlit app where a user describes their situation in their own words. Gemini turns this into an ordered checklist across the relevant life areas. Users can tick off steps, ask for an explanation and update the plan while keeping completed steps.
 
 **Link to the live thing (if any):**
-Live app (built and deployed by Felix): https://rebuild-nq5nwmyxtv2ak6efhsybx9.streamlit.app/ · Project documentation: [`hackathon/README 3..md`](hackathon/README%203..md) and [`hackathon/README 3. 2.md`](hackathon/README%203.%202.md). Slides: [`hackathon/Rebuild_Plan_Hackathon_3_Final.pptx.pdf`](hackathon/Rebuild_Plan_Hackathon_3_Final.pptx.pdf).
+Code: in my partner Felix Reichle's portfolio, [`Term 1/Week 3/hackathon/rebuild/`](https://github.com/flxr8/ai4g-portfolio-felix-reichle/tree/main/Term%201/Week%203/hackathon/rebuild) (Felix wrote most of the code). Live app (built and deployed by Felix): https://rebuild-nq5nwmyxtv2ak6efhsybx9.streamlit.app/ · Project documentation: [`hackathon/README 3..md`](hackathon/README%203..md) and [`hackathon/README 3. 2.md`](hackathon/README%203.%202.md). Slides: [`hackathon/Rebuild_Plan_Hackathon_3_Final.pptx.pdf`](hackathon/Rebuild_Plan_Hackathon_3_Final.pptx.pdf).
 
 **How do I run it?**
 See the setup instructions in [`hackathon/README 3..md`](hackathon/README%203..md) and [`hackathon/README 3. 2.md`](hackathon/README%203.%202.md). They describe Python 3.10+, `pip install -r requirements.txt`, a `.env` file with `GEMINI_API_KEY`, and `streamlit run app.py`.
