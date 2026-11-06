@@ -12,8 +12,9 @@ simple income risk classifier and a reflection on whether it is fair. Then the b
 yearly CO2 and says whether you are under, slightly over or far over the 2500 kg budget.
 
 **What did I hand in?**
-`homework/Week1_Workshop_Lili.ipynb`: the workshop notebook with every exercise and question done
-and run from top to bottom. In the test run, 2 flights, 3000 km of driving and eating meat daily
+`homework/Week1_Workshop_Lili.ipynb`: the workshop notebook with every coding exercise and written
+question done, and run from top to bottom. The two "write down your guess" prompts, the end-of-session
+checklist and the cell for demo notes are left for me. In the test run, 2 flights, 3000 km of driving and eating meat daily
 gives 2890 kg CO2, which is "slightly over budget".
 
 **What did I find difficult, and how did I solve it?**
