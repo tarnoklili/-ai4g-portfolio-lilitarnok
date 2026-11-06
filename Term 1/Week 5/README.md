@@ -22,7 +22,7 @@ Workshop retake: see [Resit/Week 5/](../../Resit/Week%205/).
 
 **Project title:** Model Showdown: Credit Card Default Prediction
 
-**My pair partner:** Bart Bruggeling (assigned pair)
+**My pair partner:** Slyman Arnaot and Rayna Jong (team of three)
 
 **Tool we had to use:** scikit-learn (Python machine-learning library), in a Jupyter notebook
 
@@ -41,7 +41,7 @@ Notebook: [`hackathon/Hackathon5-model showdown.ipynb`](hackathon/Hackathon5-mod
 Open [`hackathon/Hackathon5-model showdown.ipynb`](hackathon/Hackathon5-model%20showdown.ipynb) in Google Colab and run it from top to bottom. It downloads the dataset from UCI, trains the models and produces the comparison and example prediction. Full instructions: [`hackathon/README-Hackathon 5.md`](hackathon/README-Hackathon%205.md).
 
 **Who did what?**
-_(Lili: one sentence on how you and Bart split the work.)_
+_(Lili: one sentence on how you, Slyman and Rayna split the work.)_
 
 **Ethical reflection - what are the risks of your tool? Who could it harm?**
 Wrong predictions can affect people’s financial situations. The historical Taiwan dataset may not represent current customers or other populations, and features such as sex, age, education and marriage status raise fairness concerns. The model should support a human decision rather than automatically control access to credit. Errors and performance for different groups need monitoring. Choosing recall responds to the cost of missed defaults, but it does not remove unfair or incorrect decisions.
