@@ -5,15 +5,29 @@
 ## 1. Homework & workshop assignments -> [`homework/`](homework/)
 
 **What was the assignment?**
+The Week 1 workshop notebook: Python as a calculator (the operators, including `//`, `%` and `**`),
+variables and the four data types, `input()` with type conversion, and `if` / `elif` / `else` with a
+simple income risk classifier and a reflection on whether it is fair. Then the big assignment
+**Green or Not?**, a CO2 budget calculator that asks about flights, driving and diet, adds up the
+yearly CO2 and says whether you are under, slightly over or far over the 2500 kg budget.
 
 **What did I hand in?**
-_List the files, or link to them. Notebook exports, screenshots, scripts._
+`homework/Week1_Workshop_Lili.ipynb`: the workshop notebook with every exercise and question done
+and run from top to bottom. In the test run, 2 flights, 3000 km of driving and eating meat daily
+gives 2890 kg CO2, which is "slightly over budget".
 
 **What did I find difficult, and how did I solve it?**
+`input()` always gives back text, so `'6' * 7` gives `'6666666'`, not 42. The answer has to be
+converted with `int()` or `float()` straight away. The other surprise was the classifier: adding age to income
+made it worse, because now being young alone pushes someone up a risk level.
+
+**AI use:** As the course allows, I used Claude (an AI assistant) for this notebook: it wrote and
+ran the code and drafted the written answers. The notebook was run from top to bottom, so the
+outputs you see are real.
 
 ### Checklist
-- [ ] My workshop / homework files are in `homework/`
-- [ ] Everything runs without errors, or I explained what does not and why
+- [x] My workshop / homework files are in `homework/`
+- [x] Everything runs without errors, or I explained what does not and why
 
 ---
 
